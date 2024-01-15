@@ -1,0 +1,515 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'poopins', sans-serif;
+}
+
+body {
+
+    color: #ededed;
+    background: url(img/back.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    position: relative;
+    font-size: 18px;
+    font-weight: 800;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+    cursor: default;
+    opacity: 25;
+    animation: slideRight 1s ease forwards;
+}
+
+.navbar a {
+    display: inline-block;
+    font-size: 22px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 300;
+    margin-left: 20px;
+    padding: 5px;
+    transition: .3s;
+    opacity: 0;
+    animation: slideTop .5s ease forwards;
+    animation-delay: calc(.2s*vard(--i));
+}
+
+.navbar a:hover {
+    color: #F9B75D;
+}
+
+#careers {
+    color: aliceblue;
+    font-size: 18px;
+    text-align: justify;
+    line-height: 1.4;
+    margin-bottom: 4rem;
+    height: 100vh;
+}
+
+
+.sign {
+    text-align: center;
+    margin-top: 100px;
+    font-size: 60px;
+    padding-bottom: 50px;
+}
+
+.sign span {
+    color: #F9B75D;
+}
+
+
+
+
+.form {
+    height: 710px;
+    width: 700px;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.13);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 62%;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.6);
+    padding: 50px 35px;
+}
+
+.form * {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+
+.form .input_field {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.form .input_field label {
+    width: 300px;
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.careers .form .input_field .input {
+    border: 2px solid #F9B75D;
+    border-color: #F9B75D;
+}
+
+label {
+    display: block;
+    margin-top: 0px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+
+
+input {
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+::placeholder {
+    color: #e5e5e5;
+}
+
+input[type="checkbox"i] {
+    margin-left: 0px;
+}
+
+.careers .form .input_field .input,
+.careers .form .input_field .textarea {
+    width: 100%;
+    outline: none;
+    font-size: 15px;
+    padding: 8px 10px;
+    border: 1px solid #F9B75D;
+    border-color: #F9B75D;
+    border-radius: 5px;
+    transition: all 0.5s ease;
+}
+
+
+
+.careers .form .input_field .textarea {
+    resize: none;
+    height: 70px;
+}
+
+.careers .form .input_field {
+    align-items: center;
+    display: flex;
+}
+
+.careers .form .input_field .selectbox {
+    position: relative;
+    width: 100%;
+}
+
+.careers .form .input_field .selectbox select {
+    width: 100%;
+    height: 100%;
+    padding: 8px 10px;
+    appearance: none;
+    border-radius: 5px;
+}
+
+.careers .form .input_field .selectbox:before {
+    content: "";
+    position: absolute;
+    top: 12px;
+    right: 10px;
+    border: 8px solid black;
+    border-color: #F9B75D transparent transparent transparent;
+    pointer-events: none;
+}
+
+
+
+
+.careers .form .input_field .input:focus,
+.careers .form .input_field .textarea:focus,
+.careers .form .input_field .select:focus {
+    border: 1px solid #1442da;
+}
+
+
+
+.careers .form .input_field p {
+    font-size: 14px;
+    color: #d8cdcd;
+}
+
+.careers .form .input_field .check {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    display: block;
+    cursor: pointer;
+    margin-bottom: 0px;
+}
+
+.careers .form .input_field .check input[type="checkbox"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.careers .form .input_field .check .checkmark {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #F9B75D;
+    display: block;
+    position: relative;
+}
+
+.careers .form .input_field .check .checkmark:before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 5px;
+    height: 2px;
+    border: 3px solid;
+    border-color: transparent transparent white white;
+    transform: rotate(-45deg);
+    display: contents;
+}
+
+.careers .form .input_field .check input[type="checkbox"]:checked~.checkmark {
+    background: #F9B75D;
+}
+
+.careers .form .input_field .check input[type="checkbox"]:checked~.checkmark:before {
+    display: block;
+}
+
+.read {
+    display: inline-block;
+    padding: 12px 28px;
+    padding-left: 90px;
+    padding-right: 90px;
+    background: #F9B75D;
+    border-radius: 40px;
+    font-size: 16px;
+    color: #081b29;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 2s;
+    box-shadow: 0 0 5px #F9B75D, 0 0 25px #F9B75D;
+}
+
+.read:hover {
+    box-shadow: 0 0 5px orange,
+        0 0 25px orange, 0 0 50px orange,
+        0 0 100px orange, 0 0 200px orange;
+}
+
+
+
+
+
+
+
+#contact {
+    height: 80vh;
+}
+
+.contact {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 3rem;
+    padding-left: 30px;
+    margin-top: 130px;
+}
+
+.contact-text h2 {
+    font-size: 90px;
+    line-height: 1;
+    text-align: center;
+}
+
+.contact-text h2 span {
+    color: #F9B75D;
+}
+
+.contact-text h4 {
+    margin: 15px 0;
+    color: rgb(228, 228, 228);
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.contact-text p {
+    color: rgb(177, 177, 177);
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 2rem;
+}
+
+.contact-list {
+    margin-bottom: 3rem;
+}
+
+.contact-list li {
+    margin-bottom: 10px;
+    display: block;
+}
+
+.contact-list li {
+    margin-bottom: 10px;
+    display: block;
+}
+
+.contact-list i {
+    display: inline-block;
+    color: #F9B75D;
+    font-size: 20px;
+    font-weight: 600;
+    transition: all .40s ease;
+}
+
+.contact-list li a:hover {
+    transform: scale(1.01) translateY(-5px);
+    color: #F9B75D;
+}
+
+.contact-icons i {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #F9B75D;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #F9B75D;
+    text-decoration: none;
+    margin: 30px 15px 30px 0;
+    transition: .5s ease;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.contact-icons i:hover {
+    background: #F9B75D;
+    color: #000;
+    box-shadow: 0 0 20px #F9B75D;
+}
+
+.contact-form form {
+    position: relative;
+}
+
+.contact-form form input, form textarea {
+    border: none;
+    outline: none;
+    width: 90%;
+    padding: 18px;
+    background: #555557;
+    color: #000;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.contact-form textarea {
+    resize: none;
+    height: 220px;
+}
+
+.contact-form form .send {
+    display: inline-block;
+    padding: 14px 60px;
+    background: #F9B75D;
+    border-radius: 40px;
+    font-size: 18px;
+    color: #081b29;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 2s;
+    box-shadow: 0 0 5px #F9B75D, 0 0 25px #F9B75D;
+}
+
+.contact-form form .send:hover {
+    box-shadow: 0 0 5px orange,
+        0 0 25px orange, 0 0 50px orange,
+        0 0 100px orange, 0 0 200px orange;
+}
+
+.footer-text {
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background: url(img/orange.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-weight: 300;
+    margin-top: 60px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.top {
+    position: fixed;
+    bottom: 2.1rem;
+    right: 2.1rem;
+}
+
+.top i {
+    color: #000;
+    background: #F9B75D;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 0.5rem;
+}
+
+@media (max-width: 420px) {
+    .careers .form .input_field {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .careers .form .input_field label {
+        margin-bottom: 5px;
+    }
+
+    .careers .form .input_field .terms {
+        flex-direction: row;
+    }
+}
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideTop {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideBottom {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
